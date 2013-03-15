@@ -9,6 +9,7 @@ echo "update git submodules"
 
 for name in *; do
   target="$HOME/.$name"
+  echo "target: $target"
   if [ -e "$target" ]; then
     if [ ! -L "$target" ]; then
       cutline=`/usr/bin/env grep -n -m1 "$cutstring" "$target" | /usr/bin/env sed "s/:.*//"`
