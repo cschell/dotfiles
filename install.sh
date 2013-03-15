@@ -3,6 +3,9 @@
 
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
+git submodule init
+git submodule update
+
 for name in *; do
   target="$HOME/.$name"
   if [ -e "$target" ]; then
@@ -34,6 +37,5 @@ for name in *; do
     fi
   fi
 done
-git submodule init
-git submodule update
+
 vim +BundleInstall +qa
