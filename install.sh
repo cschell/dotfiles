@@ -3,8 +3,8 @@
 
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
-git submodule init
-git submodule update
+/usr/bin/env git submodule init
+/usr/bin/env git submodule update
 
 for name in *; do
   target="$HOME/.$name"
