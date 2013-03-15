@@ -11,18 +11,18 @@ for name in *; do
   target="$HOME/.$name"
   if [ -e "$target" ]; then
     if [ ! -L "$target" ]; then
-      cutline=`grep -n -m1 "$cutstring" "$target" | sed "s/:.*//"`
+      cutline=`/usr/bin/env grep -n -m1 "$cutstring" "$target" | /usr/bin/env sed "s/:.*//"`
       if [ -n "$cutline" ]; then
         cutline=$((cutline-1))
         echo "Updating $target"
-        head -n $cutline "$target" > update_tmp
-        startline=`sed '1!G;h;$!d' "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
+        /usr/bin/env head -n $cutline "$target" > update_tmp
+        startline=`/usr/bin/env sed '1!G;h;$!d' "$name" | /usr/bin/env grep -n -m1 "$cutstring" | /usr/bin/env sed "s/:.*//"`
         if [ -n "$startline" ]; then
-          tail -n $startline "$name" >> update_tmp
+          /usr/bin/env tail -n $startline "$name" >> update_tmp
         else
-          cat "$name" >> update_tmp
+          /usr/bin/env cat "$name" >> update_tmp
         fi
-        mv update_tmp "$target"
+        /usr/bin/env mv update_tmp "$target"
       else
         echo "WARNING: $target exists but is not a symlink."
       fi
@@ -31,13 +31,13 @@ for name in *; do
     if [ "$name" != 'install.sh' ] && [ "$name" != 'README.md' ]; then
       echo "Creating $target"
       if [ -n "$(grep "$cutstring" "$name")" ]; then
-        cp "$PWD/$name" "$target"
+        /usr/bin/env cp "$PWD/$name" "$target"
       else
-        ln -s "$PWD/$name" "$target"
+        /usr/bin/env ln -s "$PWD/$name" "$target"
       fi
     fi
   fi
 done
 
 echo "bundle install vim modules"
-vim +BundleInstall +qa
+/usr/bin/env vim +BundleInstall +qa
