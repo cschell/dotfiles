@@ -34,5 +34,6 @@ for name in *; do
     fi
   fi
 done
-
+git submodule init
+git submodule update
 vim +BundleInstall +qa
