@@ -2,8 +2,9 @@
 
 
 cutstring="DO NOT EDIT BELOW THIS LINE"
-
+echo "initialize git submodules"
 /usr/bin/env git submodule init
+echo "update git submodules"
 /usr/bin/env git submodule update
 
 for name in *; do
@@ -38,4 +39,5 @@ for name in *; do
   fi
 done
 
+echo "bundle install vim modules"
 vim +BundleInstall +qa
