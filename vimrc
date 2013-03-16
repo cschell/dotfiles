@@ -36,6 +36,7 @@ set noerrorbells         " don't beep
 set pastetoggle=<F2>
 set mouse=a
 
+
 " forces me to not use arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -68,9 +69,15 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'wincent/Command-T'
+Bundle 'altercation/vim-colors-solarized'
 
 " Changes Vim Motion to pre-1.3 behavior by rebinding the leader in your vimrc:
 let g:EasyMotion_leader_key = '<Leader>'
+
+
+" Solarized Theme
+"set background=dark
+colorscheme solarized
 
 
 filetype plugin indent on     " required!
