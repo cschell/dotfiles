@@ -40,5 +40,10 @@ for name in *; do
   fi
 done
 
+
 echo "bundle install vim modules"
 /usr/bin/env vim +BundleInstall +qa
+
+if [ ! -e "./oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
+  git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ./oh-my-zsh/plugins/
+fi
