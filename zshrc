@@ -31,10 +31,15 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails textmate ruby lighthouse)
 plugins=(gem osx) # zsh-syntax-highlighting)
 
-# Customize to your need  s...
-#export PATH=/Users/Chris/.rvm/gems/ruby-1.9.3-head/bin:/sbin:/usr/local/bin:$PATH
+# set environment dependant parameters
+if [[ `uname` == 'Darwin' ]]; then
+	DEFAULT_USER="Chris"
+	EDITOR=/bin/vim
+else
+	DEFAULT_USER="chris"
+	EDITOR="/usr/bin/env vim"
+fi
 
-EDITOR=/bin/vim
 alias ls='ls -lah'
 alias cp='gcp'
 
