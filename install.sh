@@ -40,7 +40,7 @@ for name in *; do
   fi
 done
 
-
+wget 'https://gist.github.com/zoomix/3827269/raw/2b8309cd77a5f8c0e0ac478e89a89a8d11363c9c/agnoster-light.zsh-theme' -P oh-my-zsh/themes/
 echo "bundle install vim modules"
 /usr/bin/env vim +BundleInstall +qa
 
