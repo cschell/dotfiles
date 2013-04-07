@@ -29,11 +29,12 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails textmate ruby lighthouse)
-plugins=(gem git osx zsh-syntax-highlighting)
+plugins=(gem osx zsh-syntax-highlighting)
 
 # set environment dependant parameters
 if [[ `uname` == 'Darwin' ]]; then
 	DEFAULT_USER="Chris"
+  alias cp='gcp'
 	EDITOR=/bin/vim
 else
 	DEFAULT_USER="chris"
@@ -43,7 +44,6 @@ fi
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 alias ls='ls -lah'
-alias cp='gcp'
 
 # alias rake='noglob rake'
 
