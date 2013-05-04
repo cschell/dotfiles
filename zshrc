@@ -48,9 +48,9 @@ alias ls='ls -lah'
 # alias rake='noglob rake'
 
 setopt append_history
-
-export PATH=.bin:/usr/local/bin:/usr/local/sbin:$PATH #:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-
 source $ZSH/oh-my-zsh.sh
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH=./bin:/usr/local/bin:/usr/local/sbin:$PATH #:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
