@@ -1,5 +1,13 @@
-ZSH=$HOME/.oh-my-zsh
 # Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# get dotfile repository location
+_d=`pwd`
+cd $ZSH
+cd `pwd -P`/..
+DOTFILE_REPOSITORY=`pwd`
+cd $_d
+
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,9 +62,16 @@ source $ZSH/oh-my-zsh.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 update_dotfiles(){
-  cd $ZSH
-  cd `pwd -P`/..
+  cd $DOTFILE_REPOSITORY
   ./install.sh
 }
 
 export PATH=./bin:/usr/local/bin:/usr/local/sbin:$PATH #:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+DOTFILE_VERSION=`GIT_DIR=$DOTFILE_REPOSITORY/.git git rev-parse HEAD`
+
+if [ "$DOTFILE_VERSION" != "`cat ~/.dotfile_version`" ]; then
+  echo "#############################################################"
+  echo "## You need to update your dotfiles! run 'update_dotfiles' ##"
+  echo "#############################################################"
+fi
