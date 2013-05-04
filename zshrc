@@ -53,4 +53,10 @@ source $ZSH/oh-my-zsh.sh
 # load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+update_dotfiles(){
+  cd $ZSH
+  cd `pwd -P`/..
+  ./install.sh
+}
+
 export PATH=./bin:/usr/local/bin:/usr/local/sbin:$PATH #:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
