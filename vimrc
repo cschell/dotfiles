@@ -70,6 +70,7 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'wincent/Command-T'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'myusuf3/numbers.vim'
 
 " Changes Vim Motion to pre-1.3 behavior by rebinding the leader in your vimrc:
 let g:EasyMotion_leader_key = '<Leader>'
