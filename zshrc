@@ -59,7 +59,7 @@ setopt append_history
 source $ZSH/oh-my-zsh.sh
 
 # load rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 update_dotfiles(){
   cd $DOTFILE_REPOSITORY
